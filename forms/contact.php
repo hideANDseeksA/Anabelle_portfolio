@@ -1,4 +1,5 @@
 <?php
+<<<<<<< HEAD
 /**
  * Requires the "PHP Email Form" library
  * The "PHP Email Form" library is available only in the pro version of the template
@@ -37,4 +38,27 @@ $contact->add_message($_POST['email'], 'Email');
 $contact->add_message($_POST['message'], 'Message', 10);
 
 echo $contact->send();
+=======
+  // Replace this with your email address
+  $receiving_email_address = 'anabelleabante12@gmail.com';
+
+  // Get the form data
+  $name = $_POST['name'];
+  $email = $_POST['email'];
+  $subject = $_POST['subject'];
+  $message = $_POST['message'];
+
+  // Email headers
+  $headers = "From: $name <$email>\r\n";
+  $headers .= "Reply-To: $email\r\n";
+
+  // Send the email
+  $success = mail($receiving_email_address, $subject, $message, $headers);
+
+  if ($success) {
+      echo 'Message sent successfully!';
+  } else {
+      echo 'Failed to send the message.';
+  }
+>>>>>>> 02490a50425f1c2ad876f7394251618c6995d7dd
 ?>
